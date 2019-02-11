@@ -28,8 +28,8 @@ I would like to print my account statement with (date, amount, balance) of withd
 ```
 
 ## How to use
-git clone https://github.com/learningtocode101/bank_tech_test.git
-bundle install
-run rspec to ensure all tests pass
-Launch irb to interact with app
+git clone https://github.com/learningtocode101/bank_tech_test.git  
+bundle install  
+run rspec to ensure all tests pass 
+Launch irb to interact with app  
  
