@@ -11,5 +11,9 @@ describe BankAccount do
   it 'can deposit money' do
     expect { account.deposit(100) }.to change {account.balance}.by (100)
   end
+
+  it 'can withdraw money' do
+    expect { account.withdraw(50) }.to change {account.balance}.by (-50)
+  end
   
 end
