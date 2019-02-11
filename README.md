@@ -5,7 +5,8 @@ Practice producing best code when there is minimal time pressure.
 Practice Object-Oriented design and TDD skills
 
 ## My approach
-Using the acceptance criteria I first started thw challange by diagramming with identify classes and their responsibilites.  
+Using the acceptance criteria I first started the challange by diagramming using UML interaction. This allowed me to identify classes and their responsibilites.  
+Following diagramming I then proceede with writing initial spec tests.
 
 ## Acceptance criteria
 Given a client makes a deposit of 1000 on 10-01-2012  
