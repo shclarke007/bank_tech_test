@@ -1,3 +1,5 @@
+require 'transaction'
+
 class BankAccount
   attr_accessor :balance
 
@@ -7,6 +9,7 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
+    # deposit_transaction(amount)
   end
 
   def withdraw(amount)
