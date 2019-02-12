@@ -49,21 +49,24 @@ $ rspec (to check all tests pass)
 $ irb or pry (to interact with app) 
 
 ```
-[1] require './lib/transaction'
+[1] pry(main)> require './lib/transaction'
 => true
-[2] require './lib/transactionhistory'
+[2] pry(main)> require './lib/transactionhistory'
 => true
-[3] require './lib/bankstatement'
+[3] pry(main)> require './lib/bankstatement'
 => true
-[4] require './lib/bankaccount'
+[4] pry(main)> require './lib/bankaccount'
 => true
-[6] account = BankAccount.new
-=> #<BankAccount:0x00007f9da7878768
- @balance=0, @statement=#<BankStatement:0x00007f9da78786a0 @list=[]>,@transactions=#<TransactionHistory:0x00007f9da7878718 @history=[]>>
- [7] account.deposit(500)
-=> [#<Transaction:0x00007f9da784abd8 @balance=500, @deposit=500, @time=2019-02-12 13:54:49 +0000, @withdrawal=nil>]
-[8] account.withdraw(50)
-=> [#<Transaction:0x00007f9da784abd8 @balance=500, @deposit=500, @time=2019-02-12 13:54:49 +0000, @withdrawal=nil>,
- #<Transaction:0x00007f9da896c588 @balance=450, @deposit=nil, @time=2019-02-12 13:55:13 +0000, @withdrawal=50>]
+[5] pry(main)> account = BankAccount.new
+=> #<BankAccount:0x00007fca30305e60 @balance=0.0, @statement=BankStatement, @transactions=#<TransactionHistory:0x00007fca30305e38 @history=[]>>
+[6] pry(main)> account.deposit(500)
+=> [#<Transaction:0x00007fead255ac70 @balance=500.0, @deposit=500, @time=2019-02-12 19:13:41 +0000, @withdrawal=nil>]
+[7] pry(main)> account.withdraw(200)
+=> [#<Transaction:0x00007fead255ac70 @balance=500.0, @deposit=500, @time=2019-02-12 19:13:41 +0000, @withdrawal=nil>,
+ #<Transaction:0x00007fead24d0638 @balance=300.0, @deposit=nil, @time=2019-02-12 19:14:26 +0000, @withdrawal=200>]
+[8] pry(main)> account.view_statement
+date || credit || debit || balance
+12/02/2019 || 500 ||  || 500.0
+12/02/2019 ||  || 200 || 300.0
 ```
  
