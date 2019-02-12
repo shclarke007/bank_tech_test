@@ -7,7 +7,7 @@ class BankAccount
   def initialize(balance = 0)
     @balance = balance
     @transactions = TransactionHistory.new
-    @statement = BankStatement.new
+    @statement = BankStatement
   end
 
   def deposit(amount)
@@ -18,6 +18,10 @@ class BankAccount
   def withdraw(amount)
     @balance -= amount
     record_withdrawal_transaction(amount, @balance)
+  end
+
+  def view_statement
+    @statement.new(@transactions).print_statement
   end
 
   private
@@ -34,4 +38,5 @@ class BankAccount
     transaction.debit(withdraw, balance)
     @transactions.add_transaction(transaction)
   end
+  
 end

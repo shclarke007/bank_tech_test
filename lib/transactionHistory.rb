@@ -8,6 +8,5 @@ class TransactionHistory
   def add_transaction(transaction)
     @history << transaction
   end
-  
 
 end
