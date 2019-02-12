@@ -13,7 +13,7 @@ Using the acceptance criteria I first started the challange by diagramming user 
 
 The approach of separating into four classes is to allow single responsibilities, relieving the burden of one class having too much work to do.  
 Following diagramming I then proceeded with writing initial simple spec tests so user can deposit and withdraw money. After successful implementation, I then refactored code to try keep DRY and lint using rubocop.
-![UML diagram](https://github.com/learningtocode101/bank_tech_test/blob/master/bank_test%20UML%20Interaction%20diagram.jpeg)
+![UML diagram](https://github.com/learningtocode101/bank_tech_test/blob/master/bank_test%20UML%20Interaction%20diagram.jpg)
 
 ## Acceptance criteria
 **Given** a client makes a deposit of 1000 on 10-01-2012  
@@ -22,10 +22,10 @@ Following diagramming I then proceeded with writing initial simple spec tests so
 **When** she prints her bank statement  
 **Then** she would see:  
 ```
-date       || credit || debit || balance
-14/01/2012 ||        || 500.00|| 2500.00
-13/01/2012 || 2000.00||       || 3000.00
-10/01/2012 || 1000.00||       || 1000.00
+date || credit || debit || balance
+14/01/2012 ||  || 500.00|| 2500.00
+13/01/2012 || 2000.00||  || 3000.00
+10/01/2012 || 1000.00||  || 1000.00
 ```
 ## User Stories
 ```
