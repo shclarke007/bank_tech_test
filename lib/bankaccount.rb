@@ -1,6 +1,6 @@
 require './lib/transaction'
 require './lib/transactionhistory'
-
+require './lib/bankstatement'
 class BankAccount
   attr_accessor :balance
 
