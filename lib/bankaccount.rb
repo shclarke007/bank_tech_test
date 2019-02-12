@@ -23,13 +23,13 @@ class BankAccount
     @balance = balance
     transaction = Transaction.new
     transaction.credit(deposit, balance)
-    @transactions.history << transaction
+    @transactions.add_transaction(transaction)
   end
 
   def record_withdrawal_transaction(withdraw, balance)
     @balance = balance
     transaction = Transaction.new
     transaction.debit(withdraw, balance)
-    @transactions.history << transaction
+    @transactions.add_transaction(transaction)
   end
 end

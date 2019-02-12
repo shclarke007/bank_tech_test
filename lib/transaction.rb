@@ -19,6 +19,5 @@ class Transaction
     @balance = balance
     @time = Time.now
   end
-  
 
 end

@@ -5,4 +5,9 @@ class TransactionHistory
     @history = []
   end
 
+  def add_transaction(transaction)
+    @history << transaction
+  end
+  
+
 end
