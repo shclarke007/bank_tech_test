@@ -1,8 +1,8 @@
-# bank_tech_test
+# Bank Tech Test
 
 ## Purpose
-Practice producing best code when there is minimal time pressure.  
-Practice Object-Oriented design and my TDD skills
+Practice producing best code when there is minimal time pressure.      
+Practice Object-Oriented design and my TDD skills. 
 
 ## My approach
 Using the acceptance criteria I first started the challange by diagramming user interaction using UML interaction diagrams. Following the interaction diagram I created class diagrams to help me to identify my class attributes and methods. Through diagramming, I came up with four classes:  
