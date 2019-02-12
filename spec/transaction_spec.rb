@@ -1,9 +1,8 @@
 require 'transaction'
-require 'bankaccount'
 
 describe Transaction do
-  subject(:transaction) { described_class.new(:deposit, :withdrawal, :balance) } 
-  let(:account) { BankAccount.new }
+  subject(:transaction) { described_class.new } 
+
   before { allow(Time).to receive(:now).and_return(:time) }
 
   it 'knows its date/time' do
@@ -12,9 +11,17 @@ describe Transaction do
   end
 
   it 'can record deposit transaction' do
-    transaction = Transaction.new(50, 100)
-    expect(transaction.deposit).to eq 50
+    transaction.credit(10, 100)
+    expect(transaction.deposit).to eq(10)
     expect(transaction.withdrawal).to eq nil
+    expect(transaction.balance).to eq 100
+    expect(transaction.time).to eq Time.now 
+  end
+
+  it 'can record withdrawal transaction' do
+    transaction.debit(50, 100)
+    expect(transaction.deposit).to eq nil
+    expect(transaction.withdrawal).to eq 50
     expect(transaction.balance).to eq 100
     expect(transaction.time).to eq Time.now 
   end
