@@ -7,6 +7,7 @@ class BankAccount
   def initialize(balance = 0)
     @balance = balance
     @transactions = TransactionHistory.new
+    @statement = BankStatement.new
   end
 
   def deposit(amount)
