@@ -13,5 +13,15 @@ describe Transaction do
     expect(transaction).to be_an_instance_of(Transaction)
     expect(transaction.time).to eq(Time.now)  
   end
+
+  it 'records deposit transaction' do
+    allow(Time).to receive(:now).and_return(:time)
+    transaction = Transaction.new(50, 100)
+    expect(transaction.deposit).to eq 50
+    expect(transaction.withdrawal).to eq nil
+    expect(transaction.balance).to eq 100
+    expect(transaction.time).to eq Time.now 
+  end
+  
   
 end
