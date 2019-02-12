@@ -43,10 +43,10 @@ I would like to print my account statement with (date, amount, balance) of withd
 ```
 
 ## How to use
-$ git clone `https://github.com/learningtocode101/bank_tech_test.git`
+$ git clone `https://github.com/learningtocode101/bank_tech_test.git`  
 $ bundle install  
 $ rspec (to check all tests pass)   
-$ irb or pry (to interact with app) 
+$ irb or pry (to interact with app)  
 
 ```
 [1] pry(main)> require './lib/transaction'
