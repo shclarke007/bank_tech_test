@@ -12,15 +12,14 @@ Using the acceptance criteria I first started the challange by diagramming user 
 ```BankStatement``` - allows for the printing of all account transaction activities.   
 
 The approach of separating into four classes is to allow single responsibilities, relieving the burden of one class having too much work to do.  
-Following diagramming I then proceeded with writing initial simple spec tests so user can deposit and withdraw money. After successful implementation I then refactored code to try keep DRY and lint using rubocop
-After implementing these basic features, I then moved on to implementing the print statement requirement and incorporating into the other classes.
+Following diagramming I then proceeded with writing initial simple spec tests so user can deposit and withdraw money. After successful implementation, I then refactored code to try keep DRY and lint using rubocop.
 
 ## Acceptance criteria
-Given a client makes a deposit of 1000 on 10-01-2012  
-And a deposit of 2000 on 13-01-2012  
-And a withdrawal of 500 on 14-01-2012  
-When she prints her bank statement  
-Then she would see:  
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see:  
 ```
 date       || credit || debit || balance
 14/01/2012 ||        || 500.00|| 2500.00
@@ -29,33 +28,40 @@ date       || credit || debit || balance
 ```
 ## User Stories
 ```
-As a user with a bank account:  
-I would like to deposit money into my account  
-I would like to withdraw money from my account  
+As an account holder
+So I can add money to my account
+I would like to deposit money
+
+As an account holder
+So I can take money from my account
+I would like to withdraw money 
+
+As an account holder
+So I can view my transactions
 I would like to print my account statement with (date, amount, balance) of withdrawals and deposits  
 ```
 
 ## How to use
-git clone https://github.com/learningtocode101/bank_tech_test.git  
-bundle install  
-run rspec to ensure all tests pass   
-Launch irb to interact with app 
+$ git clone `https://github.com/learningtocode101/bank_tech_test.git`
+$ bundle install  
+$ rspec (to check all tests pass)   
+$ irb or pry (to interact with app) 
 
 ```
-[1] pry(main)> require './lib/transaction'
+[1] require './lib/transaction'
 => true
-[2] pry(main)> require './lib/transactionhistory'
+[2] require './lib/transactionhistory'
 => true
-[3] pry(main)> require './lib/bankstatement'
+[3] require './lib/bankstatement'
 => true
-[4] pry(main)> require './lib/bankaccount'
+[4] require './lib/bankaccount'
 => true
-[6] pry(main)> account = BankAccount.new
+[6] account = BankAccount.new
 => #<BankAccount:0x00007f9da7878768
  @balance=0, @statement=#<BankStatement:0x00007f9da78786a0 @list=[]>,@transactions=#<TransactionHistory:0x00007f9da7878718 @history=[]>>
- [7] pry(main)> account.deposit(500)
+ [7] account.deposit(500)
 => [#<Transaction:0x00007f9da784abd8 @balance=500, @deposit=500, @time=2019-02-12 13:54:49 +0000, @withdrawal=nil>]
-[8] pry(main)> account.withdraw(50)
+[8] account.withdraw(50)
 => [#<Transaction:0x00007f9da784abd8 @balance=500, @deposit=500, @time=2019-02-12 13:54:49 +0000, @withdrawal=nil>,
  #<Transaction:0x00007f9da896c588 @balance=450, @deposit=nil, @time=2019-02-12 13:55:13 +0000, @withdrawal=50>]
 ```
