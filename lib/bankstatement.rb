@@ -20,7 +20,10 @@ class BankStatement
 
   def print_transactions
     @transactions.history.map do |transaction|
-      puts "#{transaction.time.strftime('%d/%m/%Y')} || #{transaction.deposit} || #{transaction.withdrawal} || #{transaction.balance}"
+      if transaction.is_a? Float
+        format('%.2f', transaction)
+      end
+      puts "#{transaction.time.strftime('%d/%m/%Y')} || #{transaction.deposit} || #{transaction.withdrawal} || #{transaction.balance.to_f}"
     end
   end
   

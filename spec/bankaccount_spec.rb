@@ -22,6 +22,5 @@ describe BankAccount do
   describe "outputs header and transactions" do
     specify { expect { account.view_statement }.to output(header).to_stdout }
   end
-  
     
 end
