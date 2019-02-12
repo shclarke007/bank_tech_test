@@ -4,6 +4,7 @@ describe TransactionHistory do
   let(:list) { described_class.new } 
   it 'has initial empty transaction history' do
     expect(list).to be_an_instance_of(TransactionHistory)  
+    expect(list.history).to eq([])
   end
 
 end
