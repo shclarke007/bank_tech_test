@@ -13,6 +13,7 @@ describe TransactionHistory do
   it 'record history of transactions' do
     transaction.debit(200, 100)
     list.add_transaction(transaction)
-    expect(list.history.length).to eq(1)  
+    expect(list.history.length).to eq(1)
+    expect(list.history).to eq([transaction])
   end
 end

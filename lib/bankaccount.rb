@@ -19,6 +19,7 @@ class BankAccount
     record_withdrawal_transaction(amount, @balance)
   end
 
+  private
   def record_deposit_transaction(deposit, balance)
     @balance = balance
     transaction = Transaction.new
