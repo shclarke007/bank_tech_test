@@ -66,7 +66,7 @@ $ irb or pry (to interact with app)
  #<Transaction:0x00007fead24d0638 @balance=300.0, @deposit=nil, @time=2019-02-12 19:14:26 +0000, @withdrawal=200>]
 [8] pry(main)> account.view_statement
 date || credit || debit || balance
-12/02/2019 || 500 ||  || 500.0
-12/02/2019 ||  || 200 || 300.0
+12/02/2019 || 500.0 ||  || 500.0
+12/02/2019 ||  || 200.0 || 300.0
 ```
  
