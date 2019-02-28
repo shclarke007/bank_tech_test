@@ -1,13 +1,14 @@
 require './lib/transaction'
 require './lib/transactionhistory'
 require './lib/bankstatement'
+
 class BankAccount
   attr_reader :balance
 
-  def initialize(balance = 0.00)
+  def initialize(balance = 0.00, transactions = TransactionHistory.new, statement = BankStatement)
     @balance = balance
-    @transactions = TransactionHistory.new
-    @statement = BankStatement
+    @transactions = transactions
+    @statement = statement
   end
 
   def deposit(amount)
@@ -25,16 +26,16 @@ class BankAccount
   end
 
   private
-  def record_deposit_transaction(deposit, balance)
+  def record_deposit_transaction(deposit, balance, transaction = Transaction.new)
     @balance = balance
-    transaction = Transaction.new
-    transaction.credit(deposit.to_f, balance)
+    @transaction = transaction
+    @transaction.credit(deposit.to_f, balance)
     @transactions.add_transaction(transaction)
   end
 
-  def record_withdrawal_transaction(withdraw, balance)
+  def record_withdrawal_transaction(withdraw, balance, transaction = Transaction.new)
     @balance = balance
-    transaction = Transaction.new
+    @transaction = transaction
     transaction.debit(withdraw.to_f, balance)
     @transactions.add_transaction(transaction)
   end

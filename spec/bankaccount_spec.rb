@@ -9,21 +9,21 @@ describe BankAccount do
   end
 
   describe "#deposit" do
-    it 'adds money to account' do
+    it 'it can deposit money to account' do
       expect(account).to respond_to(:deposit).with(1).argument  
       expect { account.deposit(100) }.to change { account.balance }.by(100)
     end
   end
 
   describe "#withdrawal" do
-    it 'subtracts money from account' do
+    it 'can withdraw money from account' do
       expect(account).to respond_to(:withdraw).with(1).argument  
       expect { account.withdraw(50) }.to change { account.balance }.by(-50)
     end   
   end
   
   describe "#display" do
-    it "displays statement header" do
+    it "can view statement header" do
       expect { account.view_statement }.to output(header).to_stdout
     end   
   end
