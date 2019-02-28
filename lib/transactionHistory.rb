@@ -1,5 +1,5 @@
 class TransactionHistory
-  attr_accessor :history
+  attr_reader :history
 
   def initialize
     @history = []

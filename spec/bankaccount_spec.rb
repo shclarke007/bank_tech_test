@@ -2,7 +2,6 @@ require 'bankaccount'
 
 describe BankAccount do
   subject(:account) { described_class.new }
-  let(:balance) { double :balance } 
   let(:header) { 'date || credit || debit || balance' + "\n" }
   
   it 'knows its intial balance' do

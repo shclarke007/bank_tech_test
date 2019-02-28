@@ -1,5 +1,5 @@
 class Transaction
-  attr_accessor :deposit, :withdrawal, :balance, :time
+  attr_reader :deposit, :withdrawal, :balance, :time
 
   def initialize
     @deposit = deposit

@@ -1,5 +1,5 @@
 class BankStatement
-  attr_accessor :transactions
+  attr_reader :transactions
 
   HEADERS = %w[date credit debit balance].freeze
   DIVIDER = ' || '.freeze
