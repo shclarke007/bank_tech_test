@@ -2,6 +2,7 @@ require 'bankaccount'
 
 describe BankAccount do
   subject(:account) { described_class.new }
+  let(:statement) { double :statement, print_statement: nil  }
   let(:header) { 'date || credit || debit || balance' + "\n" }
   
   it 'knows its intial balance' do
@@ -24,6 +25,8 @@ describe BankAccount do
   
   describe "#display" do
     it "can view statement header" do
+      allow(statement).to receive(:print_statement)
+      account.view_statement
       expect { account.view_statement }.to output(header).to_stdout
     end   
   end
