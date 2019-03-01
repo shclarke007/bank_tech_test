@@ -3,7 +3,7 @@ require 'transaction'
 
 describe TransactionHistory do
   let(:list) { described_class.new } 
-  let(:transaction) { Transaction.new }
+  let(:transaction) { double :transaction, withdraw: 200, balance:100, time: '14/01/2012' }
 
   describe "#no transaction" do
     it 'has initial empty transaction history' do
@@ -14,10 +14,9 @@ describe TransactionHistory do
  
 describe "#after transaction" do
   it 'can record history of transactions' do
-    transaction.debit(200, 100)
-    list.add_transaction(transaction)
+    list.add_transaction(:transaction)
     expect(list.history.length).to eq(1)
-    expect(list.history).to eq([transaction])
+    expect(list.history).to eq([:transaction])
   end
 end
 

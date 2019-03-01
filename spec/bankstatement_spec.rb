@@ -8,10 +8,4 @@ describe BankStatement do
     expect(statement).to be_an_instance_of(BankStatement)  
   end
 
-  describe "#renders" do
-    it "" do
-    end
-  end
-  
-
 end
